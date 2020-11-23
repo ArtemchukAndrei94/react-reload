@@ -1,0 +1,11 @@
+.profile {
+    grid-area: mc;
+}
+.profile img {
+    width: 1000px;
+    height: 100px;
+}
+
+.item {
+    color: #f02532;
+}

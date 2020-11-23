@@ -1,0 +1,11 @@
+.dialogs {
+    display: grid;
+    margin: 0 auto;
+    padding: 20px;
+
+    grid-template-areas:
+            "dialItems msg";
+
+    grid-template-columns: 1fr 1fr;
+}
+

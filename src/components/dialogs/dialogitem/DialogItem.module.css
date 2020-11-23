@@ -1,0 +1,13 @@
+.dialogsItems {
+    grid-area: dialItems;
+    text-decoration: none;
+}
+
+.dialogsItems .active{
+    color: green;
+}
+
+.dialog {
+    color: #7995b0;
+
+}

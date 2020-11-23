@@ -1,0 +1,23 @@
+.profileInfo {
+    display: grid;
+
+    grid-template-areas:
+        "ava desc";
+
+    grid-template-columns: 1fr 1fr;
+}
+
+.profileInfo img {
+    width: 100px;
+    border-radius: 10px;
+}
+
+.avatar {
+    grid-area: ava;
+}
+
+
+
+.description {
+    grid-area: desc;
+}
