@@ -9,3 +9,11 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.messages {
+    grid-area: msg;
+}
+
+.dialogsItems {
+    grid-area: dialItems;
+    text-decoration: none;
+}

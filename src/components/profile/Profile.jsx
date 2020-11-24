@@ -3,14 +3,14 @@ import React from "react";
 import Posts from "./myposts/Posts";
 import ProfileInfo from "./profileinfo/ProfileInfo";
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div className={classes.profile}>
             <div>
                 <img src="https://w-dog.ru/wallpapers/3/1/471527542180790/tumannost-zvezdy-kosmos.jpg"/>
             </div>
             <ProfileInfo fio="Андрей Артемчук"/>
-            <Posts/>
+            <Posts posts={props.state.posts}/>
         </div>
     );
 }
