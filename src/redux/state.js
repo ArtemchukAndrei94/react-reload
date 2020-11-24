@@ -1,3 +1,5 @@
+import {renderEntireTree} from "../render";
+
 let state =
     {
         profilePage: {
@@ -6,7 +8,8 @@ let state =
                 {id: "2", msg: "How are you"},
                 {id: "3", msg: "Hi"},
                 {id: "4", msg: "All cool"}
-            ]
+            ],
+            tempPost : ""
         },
 
         messagesPage: {
@@ -24,5 +27,19 @@ let state =
         }
 
     }
+
+export let addPost = () => {
+    let post =  {id: "5", msg: state.profilePage.tempPost};
+    state.profilePage.posts.push(post);
+    state.profilePage.tempPost = "";
+    renderEntireTree(state);
+}
+
+export let addTempPost = (tempChar) => {
+    debugger;
+    state.profilePage.tempPost = state.profilePage.tempPost + tempChar;
+    renderEntireTree(state);
+}
+
 
 export default state;

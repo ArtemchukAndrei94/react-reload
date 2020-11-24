@@ -10,7 +10,7 @@ const Profile = (props) => {
                 <img src="https://w-dog.ru/wallpapers/3/1/471527542180790/tumannost-zvezdy-kosmos.jpg"/>
             </div>
             <ProfileInfo fio="Андрей Артемчук"/>
-            <Posts posts={props.state.posts}/>
+            <Posts posts={props.state.posts} addPost={props.addPost} addTempPost={props.addTempPost} tempPost={props.state.tempPost}/>
         </div>
     );
 }

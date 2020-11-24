@@ -2,15 +2,22 @@ import React from "react";
 import Post from "./post/Post";
 
 const Posts = (props) => {
-
     const postsComponents = props.posts.map(posts => {
         return <Post msg={posts.msg} id={posts.id}/>
     });
 
     let newPostElement = React.createRef();
 
-    let addPost = () => {
+    let addPostt = () => {
         let text = newPostElement.current.value;
+        props.addPost(text);
+        newPostElement.current.value = "";
+    }
+
+    let changeTextAreaPost = () => {
+        debugger;
+        props.addTempPost(newPostElement.current.value.slice(-1))
+        newPostElement.current.value = props.tempPost;
     }
 
     return (
@@ -18,8 +25,8 @@ const Posts = (props) => {
             <div>
                 my posts
                 <div>
-                    <textarea ref={newPostElement}></textarea>
-                    <button onClick={ addPost}>add Post</button>
+                    <textarea ref={newPostElement} onChange={changeTextAreaPost}></textarea>
+                    <button onClick={ addPostt }>add Post</button>
                     <button>remove</button>
                 </div>
             </div>
@@ -30,6 +37,6 @@ const Posts = (props) => {
 
 export default Posts;
 
-// next 32
+// next 34
 
 
