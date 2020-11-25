@@ -1,7 +1,19 @@
-import {renderEntireTree} from "./render";
-import state from "./redux/state";
+import state, {addPost, addTempPost, subscribe} from "./redux/state";
+import ReactDOM from "react-dom";
+import React from "react";
+import App from "./App";
 
-renderEntireTree(state);
+let renderEntireTree = () => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App state={state} addPost={addPost} addTempPost={addTempPost}/>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+
+}
+renderEntireTree();
+subscribe(renderEntireTree);
 
 
 

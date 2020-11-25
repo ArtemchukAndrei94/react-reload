@@ -8,7 +8,7 @@ const Posts = (props) => {
 
     let newPostElement = React.createRef();
 
-    let addPostt = () => {
+    let addPost = () => {
         let text = newPostElement.current.value;
         props.addPost(text);
         newPostElement.current.value = "";
@@ -17,7 +17,6 @@ const Posts = (props) => {
     let changeTextAreaPost = () => {
         debugger;
         props.addTempPost(newPostElement.current.value.slice(-1))
-        newPostElement.current.value = props.tempPost;
     }
 
     return (
@@ -25,8 +24,8 @@ const Posts = (props) => {
             <div>
                 my posts
                 <div>
-                    <textarea ref={newPostElement} onChange={changeTextAreaPost}></textarea>
-                    <button onClick={ addPostt }>add Post</button>
+                    <textarea ref={newPostElement} onChange={changeTextAreaPost} value={props.tempPost}></textarea>
+                    <button onClick={ addPost }>add Post</button>
                     <button>remove</button>
                 </div>
             </div>

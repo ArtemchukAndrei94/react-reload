@@ -1,4 +1,5 @@
-import {renderEntireTree} from "../render";
+
+let renderEntireTree;
 
 let state =
     {
@@ -28,18 +29,20 @@ let state =
 
     }
 
-export let addPost = () => {
+export const addPost = () => {
     let post =  {id: "5", msg: state.profilePage.tempPost};
     state.profilePage.posts.push(post);
     state.profilePage.tempPost = "";
-    renderEntireTree(state);
+    renderEntireTree();
 }
 
-export let addTempPost = (tempChar) => {
+export const addTempPost = (tempChar) => {
     debugger;
     state.profilePage.tempPost = state.profilePage.tempPost + tempChar;
-    renderEntireTree(state);
+    renderEntireTree();
 }
 
-
+export const subscribe = (observer) => {
+    renderEntireTree = observer;
+}
 export default state;
