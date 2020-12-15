@@ -1,22 +1,24 @@
 import React from "react";
 import Post from "./post/Post";
+import {addPostActionCreator, updateNewPostActionCreator} from "../../../redux/ProfileReducer";
+
 
 const Posts = (props) => {
+    debugger;
     const postsComponents = props.posts.map(posts => {
         return <Post msg={posts.msg} id={posts.id}/>
     });
 
     let newPostElement = React.createRef();
 
-    let addPost = () => {
-        let text = newPostElement.current.value;
-        props.addPost(text);
+    let onAddPost = () => {
+        props.addPost();
         newPostElement.current.value = "";
     }
 
-    let changeTextAreaPost = () => {
-        debugger;
-        props.addTempPost(newPostElement.current.value.slice(-1))
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
     }
 
     return (
@@ -24,8 +26,8 @@ const Posts = (props) => {
             <div>
                 my posts
                 <div>
-                    <textarea ref={newPostElement} onChange={changeTextAreaPost} value={props.tempPost}></textarea>
-                    <button onClick={ addPost }>add Post</button>
+                    <textarea ref={newPostElement} onChange={onPostChange} value={props.tempPost}></textarea>
+                    <button onClick={ onAddPost }>add Post</button>
                     <button>remove</button>
                 </div>
             </div>
@@ -36,6 +38,6 @@ const Posts = (props) => {
 
 export default Posts;
 
-// next 34
+
 
 

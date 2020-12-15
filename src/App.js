@@ -2,26 +2,23 @@ import './App.css';
 import React from "react";
 import Header from "./components/header/Header";
 import Navbar from "./components/navbar/Navbar";
-import Dialogs from "./components/dialogs/Dialogs";
 import Profile from "./components/profile/Profile";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
+import DialogsContainer from "./components/dialogs/DialogsContainer";
+import UsersContainer from "./components/users/UsersContainer";
 
 const App = (props) => {
-
+    debugger;
     return (
-        <BrowserRouter>
-            <div className='app-wrapper'>
-                <Header/>
-                <Navbar/>
-                <div className='app-wrapper-content'>
-                    <Route path='/profile' render={() => <Profile
-                        state={props.state.profilePage}
-                        addPost={props.addPost}
-                        addTempPost={props.addTempPost}/>} />
-                    <Route path='/dialogs' render={() => <Dialogs state={props.state.messagesPage}/>}/>
-                </div>
+        <div className='app-wrapper'>
+            <Header/>
+            <Navbar/>
+            <div className='app-wrapper-content'>
+                <Route path='/profile' render={() => <Profile/>}/>
+                <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                <Route path='/users' render={() => <UsersContainer/>}/>
             </div>
-        </BrowserRouter>
+        </div>
     );
 }
 
