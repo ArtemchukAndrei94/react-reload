@@ -9,7 +9,12 @@ const Profile = (props) => {
             <div>
                 <img src="https://w-dog.ru/wallpapers/3/1/471527542180790/tumannost-zvezdy-kosmos.jpg"/>
             </div>
-            <ProfileInfo fio="Андрей Артемчук"/>
+            <div className={classes.profile} key={props.userId}>
+                <ProfileInfo fio={props.fullName}
+                             avatar={props.photos.large != null ? props.photos.large : null}
+                             aboutMe={props.aboutMe}
+                             contacts={props.contacts}/>
+            </div>
             <PostsContainer/>
         </div>
     );

@@ -1,23 +1,13 @@
 .profileInfo {
     display: grid;
 
-    grid-template-areas:
-        "ava desc";
+    grid-template-columns: 200px 150px;
+    grid-template-rows: 100px;
+    padding: 20px;
 
-    grid-template-columns: 1fr 1fr;
 }
 
 .profileInfo img {
     width: 100px;
     border-radius: 10px;
-}
-
-.avatar {
-    grid-area: ava;
-}
-
-
-
-.description {
-    grid-area: desc;
 }
